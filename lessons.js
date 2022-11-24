@@ -1,15 +1,15 @@
 let Lessons = [
     {
         id: 101,
-        subject:"math",
-        location:"dubai",
+        subject:"Math",
+        location:"Abu Dhabi",
         price:2000,
-        spaces:5,
+        spaces:6,
         image:"images/math.jpg"
     },
     {
         id: 102,
-        subject:"science",
+        subject:"Science",
         location:"dubai",
         price:1500,
         spaces:5,
@@ -17,7 +17,7 @@ let Lessons = [
     },
     {
         id: 103,
-        subject:"english",
+        subject:"English",
         location:"dubai",
         price:2000,
         spaces:5,
@@ -41,7 +41,7 @@ let Lessons = [
     },
     {
         id: 106,
-        subject:"spanish",
+        subject:"Spanish",
         location:"dubai",
         price:2000,
         spaces:5,
@@ -49,7 +49,7 @@ let Lessons = [
     },
     {
         id: 107,
-        subject:"computer science",
+        subject:"Computer Science",
         location:"dubai",
         price:2000,
         spaces:5,
@@ -73,7 +73,7 @@ let Lessons = [
     },
     {
         id: 110,
-        subject:"accounting",
+        subject:"Accounting",
         location:"dubai",
         price:2000,
         spaces:5,
