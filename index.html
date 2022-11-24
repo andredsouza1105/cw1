@@ -19,6 +19,12 @@
     <body>
         <div id="app">
             <main>
+                <button v-if="this.cart.length>=1">
+                    {{cartItemCount}}
+                    <span class="fas fa-cart-plus"></span>
+                    Cart
+                </button>
+                <button v-else disabled="disabled">Cart</button>
                 <p>
                     <strong>Sort By:</strong>
                     <select v-model="sort">
@@ -70,6 +76,8 @@
                     },
                     sort: "Price",
 
+
+
                 }
                 ,
                 methods: {
@@ -93,6 +101,9 @@
 
                 },
                 computed: {
+                    cartItemCount(){
+                        return this.cart.length;
+                    },
                     sortedLessons() {
                         if (this.sort == "Price") {
                             let lessonsArray = this.lessons.slice(0);
@@ -131,9 +142,9 @@
                             }
                             return lessonsArray.sort(compare);
 
-                            
+
                         }
-                        else if (this.sort =="Location Descending") {
+                        else if (this.sort == "Location Descending") {
                             let lessonsArray = this.lessons.slice(0);
                             function compare(a, b) {
                                 if (a.location > b.location)
@@ -144,7 +155,7 @@
                             }
                             return lessonsArray.sort(compare).reverse();
 
-                            
+
                         }
                         else if (this.sort == "Subject") {
                             let lessonsArray = this.lessons.slice(0);
@@ -157,7 +168,7 @@
                             }
                             return lessonsArray.sort(compare);
 
-                            
+
                         }
                         else if (this.sort == "Subject Descending") {
                             let lessonsArray = this.lessons.slice(0);
@@ -170,7 +181,7 @@
                             }
                             return lessonsArray.sort(compare).reverse();
 
-                            
+
                         }
                         else if (this.sort == "Avaialability") {
                             let lessonsArray = this.lessons.slice(0);
@@ -183,7 +194,7 @@
                             }
                             return lessonsArray.sort(compare);
 
-                            
+
                         }
                         else if (this.sort == "Availability Descending") {
                             let lessonsArray = this.lessons.slice(0);
@@ -196,7 +207,7 @@
                             }
                             return lessonsArray.sort(compare).reverse();
 
-                            
+
                         }
                     }
                 }
