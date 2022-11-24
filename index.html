@@ -19,7 +19,7 @@
     <body>
         <div id="app">
             <main>
-                <button v-if="this.cart.length>=1">
+                <button v-if="this.cart.length>=1" v-on:click="showCart">
                     {{cartItemCount}}
                     <span class="fas fa-cart-plus"></span>
                     Cart
@@ -33,7 +33,8 @@
                     </select>
                 </p>
                 <div>
-                    <div class="lesson" v-for="lesson in sortedLessons">
+                    <div v-if="showLesson">
+                    <div  class="lesson" v-for="lesson in sortedLessons">
                         <h2 v-text="lesson.subject" style="text-align:center;"></h2>
                         <hr>
                         <p>Location: {{lesson.location}}</p>
@@ -51,9 +52,21 @@
                         <span v-else>Buy Now!</span>
 
                     </div>
+                </div>
+                    <div v-else>
+                      <h1> Cart </h1>
+                      <div v-for="(lesson,key) in sortedLessons">
+                        <p v-if="cartCount(lesson.id)>0">
+                        {{key+1}})  {{lesson.subject}} , Amount= {{cartCount(lesson.id)}}
+                        <button v-on:click="removeOne(lesson.id)">Remove 1</button>
+                    </p>
+                        
+                      </div> 
+                    </div>
 
 
                 </div>
+                
             </main>
         </div>
 
@@ -75,6 +88,8 @@
                         availaibility_desc: "Availability Descending"
                     },
                     sort: "Price",
+                    showLesson:true,
+
 
 
 
@@ -83,7 +98,7 @@
                 methods: {
                     addToCart(lesson) {
                         this.cart.push(lesson.id);
-
+                        
                         console.log(this.cart);
                     },
                     canAddToCart(lesson) {
@@ -97,7 +112,22 @@
                             }
                         }
                         return count;
+                    },
+                    showCart(){
+                    this.showLesson = this.showLesson ? false:true;
+                },
+                removeOne(id){
+                    check=true;
+                    for(let i=0;i<this.cart.length;i++){
+                        if(check==true){
+                            if(id==this.cart[i]){
+                                this.cart.splice(i,1);
+                                check=false;
+                            }
+                        }
                     }
+
+                }
 
                 },
                 computed: {
