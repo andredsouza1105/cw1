@@ -62,6 +62,13 @@
                     </p>
                         
                       </div> 
+                      <div>
+                        <h1>Checkout</h1>
+                        Full Name:  <input type="text" v-model="name" v-on:change="checkName(name)"> <label id="nameLabel"></label> <br>
+                        Phone Number: <input type="number" v-model="number" v-on:change="checkNumber(number)"> <br>
+                        <button v-if="nameValidate==true && numberValidate==true" v-on:click="checkout">Checkout</button>
+                        <button v-else disabled="disabled">Checkout</button>
+                      </div>
                     </div>
 
 
@@ -89,6 +96,12 @@
                     },
                     sort: "Price",
                     showLesson:true,
+                    nameValidate:false,
+                    numberValidate:false,   
+                    
+                    name:"",
+                    number:""
+
 
 
 
@@ -103,6 +116,35 @@
                     },
                     canAddToCart(lesson) {
                         return lesson.spaces > this.cartCount(lesson.id);
+                    },
+                    checkout(){
+                        checkoutButton=document.getElementById("checkoutButton");
+                        
+                        alert("Your Order Has successfully been placed");
+                    },
+                    checkName(str){
+                        
+                        check= /\d/.test(str);
+                        nameLabel=document.getElementById("nameLabel");
+                        if(check==true || str.trim()==""){
+                            nameLabel.innerHTML="Please Type an approiate name";
+                            this.nameValidate=false;
+                        }
+                        else{
+                            nameLabel.innerHTML="";
+                            this.nameValidate=true;
+                            
+                        }
+                        
+                        
+                    },
+                    checkNumber(num){
+                        if(num==""){
+                            this.numberValidate=false;
+                        }
+                        else{
+                            this.numberValidate=true;
+                        }
                     },
                     cartCount(id) {
                         let count = 0;
