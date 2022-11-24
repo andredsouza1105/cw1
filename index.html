@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="lessons.js"></script>
     <link rel="stylesheet" href="lesson.css">
@@ -35,7 +33,7 @@
                 <div>
                     <div v-if="showLesson">
                     <div  class="lesson" v-for="lesson in sortedLessons">
-                        <h2 v-text="lesson.subject" style="text-align:center;"></h2>
+                        <h2 v-text="lesson.subject" style="text-align:center;"></h2><i v-bind:class="lesson.icon"></i>  
                         <hr>
                         <p>Location: {{lesson.location}}</p>
                         <p>Price: {{lesson.price}}</p>

@@ -5,7 +5,8 @@ let Lessons = [
         location:"Abu Dhabi",
         price:2000,
         spaces:6,
-        image:"images/math.jpg"
+        image:"images/math.jpg",
+        icon:"fa-solid fa-calculator"
     },
     {
         id: 102,
@@ -13,15 +14,17 @@ let Lessons = [
         location:"dubai",
         price:1500,
         spaces:5,
-        image:"images/science.jpg"
+        image:"images/science.jpg",
+        icon:"fa-solid fa-flask"
     },
     {
         id: 103,
         subject:"English",
         location:"dubai",
-        price:2000,
+        price:3000,
         spaces:5,
-        image:"images/english.jpg"
+        image:"images/english.jpg",
+        icon:"fa-solid fa-user-shakespeare"
     },
     {
         id: 104,
@@ -29,7 +32,8 @@ let Lessons = [
         location:"dubai",
         price:2000,
         spaces:5,
-        image:"images/sst.jpg"
+        image:"images/sst.jpg",
+        icon:"fa-solid fa-landmark"
     },
     {
         id: 105,
@@ -37,7 +41,8 @@ let Lessons = [
         location:"dubai",
         price:2000,
         spaces:5,
-        image:"images/french.jpg"
+        image:"images/french.jpg",
+        icon:"fa-solid fa-croissant"
     },
     {
         id: 106,
@@ -45,7 +50,8 @@ let Lessons = [
         location:"dubai",
         price:2000,
         spaces:5,
-        image:"images/spanish.jpg"
+        image:"images/spanish.jpg",
+        icon:"fa-solid fa-taco"
     },
     {
         id: 107,
@@ -53,7 +59,8 @@ let Lessons = [
         location:"dubai",
         price:2000,
         spaces:5,
-        image:"images/cs.jpg"
+        image:"images/cs.jpg",
+        icon:"fa-solid fa-square-code"
     },
     {
         id: 108,
@@ -61,7 +68,8 @@ let Lessons = [
         location:"dubai",
         price:2000,
         spaces:5,
-        image:"images/geo.jpg"
+        image:"images/geo.jpg",
+        icon:"fa-solid fa-mountain"
     },
     {
         id: 109,
@@ -69,7 +77,8 @@ let Lessons = [
         location:"dubai",
         price:2000,
         spaces:5,
-        image:"images/culinary.jpg"
+        image:"images/culinary.jpg",
+        icon:"fa-solid fa-utensils"
     },
     {
         id: 110,
@@ -77,6 +86,7 @@ let Lessons = [
         location:"dubai",
         price:2000,
         spaces:5,
-        image:"images/accounting.jpg"
+        image:"images/accounting.jpg",
+        icon:"fa-solid fa-receipt"
     },
 ]
