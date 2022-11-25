@@ -17,6 +17,7 @@
     <body>
         <div id="app">
             <main>
+                <input type="text" v-model="searchValue"> <br><br>
                 <button v-if="this.cart.length>=1" v-on:click="showCart">
                     {{cartItemCount}}
                     <span class="fas fa-cart-plus"></span>
@@ -98,7 +99,8 @@
                     numberValidate:false,   
                     
                     name:"",
-                    number:""
+                    number:"",
+                    searchValue:""
 
 
 
@@ -176,6 +178,13 @@
                         return this.cart.length;
                     },
                     sortedLessons() {
+                        if (this.searchValue != "" && this.searchValue){
+                            let lessonsArray=this.lessons;
+                            lessonsArray= lessonsArray.filter((item)=>{
+                                return item.subject.toUpperCase().includes(this.searchValue.toUpperCase())||item.location.toUpperCase().includes(this.searchValue.toUpperCase());
+                            })
+                            return lessonsArray;
+                        }
                         if (this.sort == "Price") {
                             let lessonsArray = this.lessons.slice(0);
                             function compare(a, b) {
